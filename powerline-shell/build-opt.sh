@@ -6,7 +6,7 @@ set -xe
 
 mkdir _opt_powerline-shell
 
-pip3 install powerline-shell --prefix _opt_powerline-shell #--no-warn-script-location
+pip3 install powerline-shell --ignore-installed --prefix _opt_powerline-shell #--no-warn-script-location
 
 cp env.sh _opt_powerline-shell/.env.sh
 cp adeinit _opt_powerline-shell/.adeinit
