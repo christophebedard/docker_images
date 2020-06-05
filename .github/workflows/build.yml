@@ -14,7 +14,8 @@ jobs:
       matrix:
         env:
           - {DIR: powerline-shell, REPO: christophebedard/images, TAG: powerline-shell}
-    runs-on: ubuntu-latest
+    # ubuntu-latest is too old (ubuntu-latest == ubuntu-18.04)
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v1
       - name: Build images
