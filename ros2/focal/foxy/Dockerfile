@@ -6,6 +6,9 @@ RUN pip3 install -U \
 # After apt install sudo
 RUN echo 'ALL ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+# Temporary fix: https://github.com/sudo-project/sudo/issues/42#issuecomment-609079906
+RUN echo "Set disable_coredump false" >> /etc/sudo.conf
+
 COPY env.sh /etc/profile.d/ade_env.sh
 COPY entrypoint /ade_entrypoint
 ENTRYPOINT ["/ade_entrypoint"]
