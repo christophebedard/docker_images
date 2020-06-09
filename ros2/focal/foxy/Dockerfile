@@ -1,5 +1,9 @@
 FROM osrf/ros2:devel
 
+RUN apt-get update && apt-get install -q -y \
+    openssh-client \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN pip3 install -U \
     colcon-coveragepy-result
 
