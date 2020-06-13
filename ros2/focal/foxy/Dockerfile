@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -q -y \
     openssh-client \
     htop \
     vim \
+    silversearcher-ag \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install -U \
