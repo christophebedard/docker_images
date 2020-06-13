@@ -8,6 +8,10 @@ Personal docker images.
 |:---------------:|:------:|:-:|
 |Focal|ROS 2|[`:ros2-devel-focal`](https://github.com/christophebedard/docker_images/blob/master/ros2/focal/Dockerfile)|
 
+### Others
+
+* [`christophebedard/ade-powerline-shell:latest`](https://github.com/christophebedard/ade-powerline-shell)
+
 ## ADE setup
 
 1. Install [ADE](https://ade-cli.readthedocs.io/en/latest/)
