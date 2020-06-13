@@ -10,6 +10,21 @@ RUN apt-get update && apt-get install -q -y \
 RUN pip3 install -U \
     colcon-coveragepy-result
 
+RUN mkdir /root/ws
+COPY . /root/ws
+WORKDIR /root/ws
+
+RUN wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos \
+    && mkdir src \
+    && vcs import src < ros2.repos
+
+# install dependencies
+RUN apt-get update && rosdep install -y \
+    --from-paths src \
+    --ignore-src \
+    --skip-keys "console_bridge fastcdr fastrtps rti-connext-dds-5.3.1 urdfdom_headers" \
+    && rm -rf /var/lib/apt/lists/*
+
 # After apt install sudo
 RUN echo 'ALL ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
