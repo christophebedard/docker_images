@@ -1,0 +1,14 @@
+export ADE_DOCKER_RUN_ARGS="
+  --dns=8.8.8.8
+  --dns=8.8.4.4
+  --cap-add=SYS_PTRACE
+  --cap-add=SYS_ADMIN
+  --cap-add=NET_ADMIN
+  --ulimit rtprio=100:100
+  -v /var/log/coredumps:/var/log/coredumps
+"
+
+export ADE_IMAGES="
+  christophebedard/images:ros2-devel-focal
+  christophebedard/ade-powerline-shell:latest
+"
