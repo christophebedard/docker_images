@@ -6,7 +6,7 @@ Personal docker images.
 
 |Ubuntu<br>Release|Software|Tag|
 |:---------------:|:------:|:-:|
-|Focal|ROS 2|[`:ros2-devel-focal`](./ros2/focal/Dockerfile)|
+|Focal|ROS 2|[`:ros2-devel-focal`](https://github.com/christophebedard/docker_images/blob/master/ros2/focal/Dockerfile)|
 
 ## ADE setup
 
