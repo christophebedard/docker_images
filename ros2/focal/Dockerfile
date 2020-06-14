@@ -10,6 +10,13 @@ RUN apt-get update && apt-get install -q -y \
 RUN pip3 install -U \
     colcon-coveragepy-result
 
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    lttng-tools \
+    liblttng-ust-dev \
+    python3-lttng \
+    python3-babeltrace \
+    python3-pandas
+
 RUN mkdir /root/ws
 COPY . /root/ws
 WORKDIR /root/ws
