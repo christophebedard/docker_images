@@ -2,15 +2,24 @@ FROM osrf/ros2:devel
 
 RUN apt-get update && apt-get install -q -y \
     openssh-client \
+    wget \
     htop \
     vim \
     silversearcher-ag \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install -U \
-    colcon-coveragepy-result
+RUN apt-get update && apt-get install -q -y \
+    libasio-dev \
+    libtinyxml2-dev \
+    lcov \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN pip3 install -U \
+    colcon-lcov-result \
+    colcon-coveragepy-result \
+    coverage
+
+RUN apt-get update && apt-get install -q -y \
     lttng-tools \
     liblttng-ust-dev \
     python3-lttng \
