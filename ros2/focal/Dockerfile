@@ -1,6 +1,7 @@
 FROM osrf/ros2:devel
 
 RUN apt-get update && apt-get install -q -y \
+    software-properties-common \
     openssh-client \
     wget \
     htop \
