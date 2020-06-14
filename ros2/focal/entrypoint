@@ -31,6 +31,9 @@ groupdel video &> /dev/null || true
 groupadd -og "${VIDEO_GROUP_ID}" video
 gpasswd -a "${USER}" video
 
+groupdel tracing &>/dev/null || true
+groupadd --system tracing
+gpasswd -a "${USER}" tracing
 
 for x in /etc/skel/.*; do
     target="/home/$USER/$(basename "$x")"
