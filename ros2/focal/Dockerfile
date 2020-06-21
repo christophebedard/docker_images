@@ -25,7 +25,12 @@ RUN apt-get update && apt-get install -q -y \
     liblttng-ust-dev \
     python3-lttng \
     python3-babeltrace \
-    python3-pandas
+    python3-pandas \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt-add-repository -y ppa:lttng/ppa && apt-get update && apt-get install -q -y \
+    babeltrace2 \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /root/ws
 COPY . /root/ws
