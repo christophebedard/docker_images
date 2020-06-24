@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -q -y \
 RUN apt-get update && apt-get install -q -y \
     libasio-dev \
     libtinyxml2-dev \
+    python3-catkin-pkg \
+    python3-bloom \
     lcov \
     && rm -rf /var/lib/apt/lists/*
 
