@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -q -y \
     openssh-client \
     wget \
     htop \
+    gdb \
     vim \
     silversearcher-ag \
     && rm -rf /var/lib/apt/lists/*
